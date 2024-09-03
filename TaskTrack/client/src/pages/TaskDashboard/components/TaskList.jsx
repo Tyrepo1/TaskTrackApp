@@ -11,15 +11,11 @@ function TaskList({ tasks, onDelete, onToggle }) {
   const [taskToDelete, setTaskToDelete] = useState(null);
 
   useEffect(() => {
-    handleSortByDeadline();
-  }, [tasks]);
-
-  const handleSortByDeadline = () => {
     const sorted = [...tasks].sort((a, b) => {
       return a.deadline.localeCompare(b.deadline); // Sort alphabetically by deadline
     });
     setSortedTasks(sorted);
-  };
+  }, [tasks]);
 
   const handleTitleFilterChange = (event) => {
     setFilterTitle(event.target.value);
@@ -87,10 +83,10 @@ function TaskList({ tasks, onDelete, onToggle }) {
         </List>
 
         {/* Delete confirmation dialog */}
-        <DeleteConfirmationDialog 
-          open={deleteConfirmationOpen} 
-          onClose={handleDeleteConfirmationClose} 
-          onConfirm={handleDeleteConfirmed} 
+        <DeleteConfirmationDialog
+          open={deleteConfirmationOpen}
+          onClose={handleDeleteConfirmationClose}
+          onConfirm={handleDeleteConfirmed}
         />
       </CardContent>
     </Card>

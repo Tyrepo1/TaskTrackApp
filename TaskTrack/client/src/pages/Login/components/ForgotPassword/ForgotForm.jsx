@@ -16,15 +16,7 @@ const ForgotForm = ({ onSubmitForm, loading }) => {
         control,
         formState: { errors },
     } = useForm({});
-    const resetForm = () => {
-        reset();
-        onSubmitForm({});
-    };
-
-    const forgotPassword = () => {
-        navigate("/forgot-password")
-    }
-
+    
     const inputFields = [
         {
             keyName: 'nameAndEmail',

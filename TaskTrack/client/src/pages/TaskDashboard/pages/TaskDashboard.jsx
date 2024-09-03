@@ -12,16 +12,12 @@ function Analytics({ handleAgentSelect }) {
     const username = localStorage.getItem('username');
 
     useEffect(() => {
-        updateList();
-    }, []);
-
-    const updateList = () => {
         getTasks().then((tasks) => {
             const filteredTasks = tasks.filter(task => task.assignee.includes(username));
             setTaskList(filteredTasks);
             setAllTaskList(tasks);
         })
-    }
+    }, []);
 
     const handleDelete = (taskId) => {
         deleteTask(taskId)

@@ -7,7 +7,6 @@ import InputField from '../../../../components/InputField';
 const SignupForm = ({ onSubmitForm, onSignup, loading }) => {
 
     const {
-        reset,
         register,
         handleSubmit,
         control,
@@ -22,7 +21,7 @@ const SignupForm = ({ onSubmitForm, onSignup, loading }) => {
           validation: {
             required: 'Email is required',
             pattern: {
-              value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+              value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
               message: 'Invalid email format',
             },
           },

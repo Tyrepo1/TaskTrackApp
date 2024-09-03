@@ -17,7 +17,7 @@ export const loginUser = async (loginData) => {
   
           if (user.password !== loginData.password) {
             return {success: false, message: "Incorrect password"}
-          } else if (user.secret == "") {
+          } else if (user.secret === "") {
             return {success: true, qr: false, message: ""}
           } else {
             return {success: true, qr: true, message: ""}

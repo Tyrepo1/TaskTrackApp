@@ -17,7 +17,7 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <img onClick={goHome} src={logoNoBackground} className=' w-32 cursor-pointer mr-4'/>
+          <img alt='logo' onClick={goHome} src={logoNoBackground} className=' w-32 cursor-pointer mr-4'/>
           <Box sx={{ flexGrow: 1 }} />
           <Button color="inherit" onClick={() => navigate("/login")}>
               Login

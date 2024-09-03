@@ -1,8 +1,7 @@
-import { addDoc, collection, getDocs, query, where, getFirestore } from "firebase/firestore";
+import { addDoc, collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import { getDataParams } from "../../core/DB";
 import { db } from '../../core/firestore';
 import { GET_OTP, baseurl } from "../configAPI";
-import { useState } from "react";
 
 const firestore = getFirestore();
 

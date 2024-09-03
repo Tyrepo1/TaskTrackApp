@@ -1,10 +1,9 @@
-import AccountCircle from '@mui/icons-material/AccountCircle';
+import LogoutIcon from '@mui/icons-material/Logout';
 import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar, Box, IconButton, Menu, MenuItem, Toolbar } from '@mui/material';
-import React, { useState } from 'react';
+import { AppBar, Box, IconButton, Toolbar } from '@mui/material';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import NotificationsButton from './NotificationsButton';
-import LogoutIcon from '@mui/icons-material/Logout';
 
 import logoNoBackground from '../../../images/tasktrack-high-resolution-logo-transparent.png';
 

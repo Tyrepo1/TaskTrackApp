@@ -28,7 +28,10 @@ const NotificationsButton = () => {
   const username = localStorage.getItem('username');
 
   useEffect(() => {
-    updateList();
+    fetchNotifications().then((notifications) => {
+      const filteredNotifications = notifications.filter(notification => notification.recipient.includes(username));
+      setNotifications(filteredNotifications);
+    })
   }, []);
 
   const formatDate = (dateString) => {
@@ -42,13 +45,6 @@ const NotificationsButton = () => {
       second: 'numeric',
     });
   };
-
-  const updateList = () => {
-    fetchNotifications().then((notifications) => {
-      const filteredNotifications = notifications.filter(notification => notification.recipient.includes(username));
-      setNotifications(filteredNotifications);
-    })
-  }
 
   const [anchorEl, setAnchorEl] = useState(null);
 
