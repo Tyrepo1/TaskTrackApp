@@ -2,7 +2,6 @@ import { DevTool } from '@hookform/devtools';
 import { Button } from '@mui/material';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from "react-router-dom";
 import InputField from '../../../../components/InputField';
 import '../../styles/Login.css';
 
