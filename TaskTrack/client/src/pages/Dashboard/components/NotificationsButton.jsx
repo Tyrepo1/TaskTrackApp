@@ -25,11 +25,10 @@ const NotificationsButton = () => {
     },
     // Add more notifications as needed
   ]);
-  const username = localStorage.getItem('username');
 
   useEffect(() => {
     fetchNotifications().then((notifications) => {
-      const filteredNotifications = notifications.filter(notification => notification.recipient.includes(username));
+      const filteredNotifications = notifications.filter(notification => notification.recipient.includes(localStorage.getItem('username')));
       setNotifications(filteredNotifications);
     })
   }, []);

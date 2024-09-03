@@ -9,11 +9,10 @@ import TaskStatus from '../components/TaskStatus';
 function Analytics({ handleAgentSelect }) {
     const [taskList, setTaskList] = useState([]);
     const [allTaskList, setAllTaskList] = useState([]);
-    const username = localStorage.getItem('username');
 
     useEffect(() => {
         getTasks().then((tasks) => {
-            const filteredTasks = tasks.filter(task => task.assignee.includes(username));
+            const filteredTasks = tasks.filter(task => task.assignee.includes(localStorage.getItem('username')));
             setTaskList(filteredTasks);
             setAllTaskList(tasks);
         })
@@ -48,7 +47,7 @@ function Analytics({ handleAgentSelect }) {
     const handleCreateTask = (newTask) => {
         saveTask({ ...newTask, completed: false, createdAt: new Date().toISOString() })
         addNotification(newTask.assignee, "A new task was assigned to you")
-        if (newTask.assignee.includes(username)) {
+        if (newTask.assignee.includes(localStorage.getItem('username'))) {
             setTaskList([...taskList, { ...newTask, id: taskList.length + 1, completed: false, createdAt: new Date().toISOString() }]);
         }
         setAllTaskList([...allTaskList, { ...newTask, id: allTaskList.length + 1, completed: false, createdAt: new Date().toISOString() }]);

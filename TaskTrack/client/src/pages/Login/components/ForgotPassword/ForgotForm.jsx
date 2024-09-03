@@ -7,16 +7,14 @@ import InputField from '../../../../components/InputField';
 import '../../styles/Login.css';
 
 const ForgotForm = ({ onSubmitForm, loading }) => {
-    const navigate = useNavigate();
 
     const {
-        reset,
         register,
         handleSubmit,
         control,
         formState: { errors },
     } = useForm({});
-    
+
     const inputFields = [
         {
             keyName: 'nameAndEmail',

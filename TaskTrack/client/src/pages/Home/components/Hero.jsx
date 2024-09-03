@@ -3,18 +3,18 @@ import diverseDevs from '../../../images/diverse_devs.jpg';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-function Hero({ }) {
+function Hero() {
 
   const navigate = useNavigate()
 
   return (
     <div style={{ position: 'relative', overflow: 'hidden' }}>
       <img
-        alt='Hero Image'
+        alt='Banner'
         src={diverseDevs}
         className='w-full h-full -z-50 absolute top-0 left-0 object-cover brightness-[20%]'
       />
-      <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 relative"> 
+      <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 relative">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
             Unlock Your Team's Potential in Task Management

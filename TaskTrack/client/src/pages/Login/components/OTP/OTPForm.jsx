@@ -8,16 +8,11 @@ import '../../styles/Login.css';
 const OTPForm = ({ onSubmitForm, loading }) => {
 
     const {
-        reset,
         register,
         handleSubmit,
         control,
         formState: { errors },
     } = useForm({});
-    const resetForm = () => {
-        reset();
-        onSubmitForm({});
-    };
 
     const inputFields = [
         {

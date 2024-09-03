@@ -32,7 +32,7 @@ export const saveUser = async (data) => {
             const { totpKey, qrCodeUrl } = response;
             account.secret = totpKey;
             // Save the user data to Firestore
-            const docRef = await addDoc(collection(db, 'users'), account);
+            await addDoc(collection(db, 'users'), account);
             return {success: true, qr: true, message: qrCodeUrl};
         }
         
